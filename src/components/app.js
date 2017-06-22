@@ -7,9 +7,6 @@ import Main from './main/main';
 import Footer from './footer/footer';
 
 class App extends Component {
-  componentWillMount(){
-    this.props.fetchPage1();
-  }
   render() {
     return (
       <div className="container">

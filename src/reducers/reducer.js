@@ -4,20 +4,14 @@ const initialState = {
   pageProducts: []
 }
 
-console.log(json);
-
 export const productsReducer = ( state = initialState, action ) => {
   switch ( action.type ) {
-    case 'FETCH_PAGE_1': {
+    case "@@router/LOCATION_CHANGE": {
+      const pageRoute = action.payload.pathname.split('')[1];
+      
       return {
         ...state,
-        pageProducts : json.products.slice(0, 6)
-      }
-    }
-    case 'HELLO_WORLD_AGAIN': {
-      return {
-        ...state,
-        message: action.payload
+        pageProducts : json.products.slice(((pageRoute*6)-6), pageRoute*6)
       }
     }
   }
