@@ -1,6 +1,79 @@
-.hello{
-  background-color: blue;
-  color: white;
-  font-size: 30px;
-  font-family: arial;
+@import "buttons";
+@import "header";
+@import "main";
+@import "footer";
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+
+    font-family: 'Lato-Regular', sans-serif;
+    font-size: 13px;
+    text-rendering: optimizeLegibility;
+
+    -moz-osx-font-smoothing: grayscale;  /* Font smoothing tweaks for MacOSx in Gecko */
+    -webkit-font-smoothing: antialiased;
+
+    color: #444A59;
+    background-color: #f8f8f8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1, p, figure {
+    margin: 0;
+    font-weight: normal;
+}
+
+a,
+a:hover,
+a:visited{
+    text-decoration: none;
+    color: #444A59;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+button {
+    appearance: none;
+    border: 0;
+}
+
+.header,
+.footer {
+    height: 60px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    text-transform: uppercase;
+    background-color: #ffffff;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    flex: 1 0 auto;
+    margin: 30px 0 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
 }

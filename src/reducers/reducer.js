@@ -1,13 +1,17 @@
+import json from '../products.json';
+
 const initialState = {
-  message: ''
+  pageProducts: []
 }
 
-export const reducer = ( state = initialState, action ) => {
+console.log(json);
+
+export const productsReducer = ( state = initialState, action ) => {
   switch ( action.type ) {
-    case 'HELLO_WORLD': {
+    case 'FETCH_PAGE_1': {
       return {
         ...state,
-        message: action.payload
+        pageProducts : json.products.slice(0, 6)
       }
     }
     case 'HELLO_WORLD_AGAIN': {

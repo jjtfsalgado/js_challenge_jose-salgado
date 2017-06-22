@@ -1,0 +1,166 @@
+/* ==========================================================================
+   Product List
+   ========================================================================== */
+
+.product-list {
+    display: flex;
+    flex: 0 1 auto;
+    flex-flow: row wrap;
+    margin: 0 -10px;
+}
+
+.product-list__item {
+    padding: 10px;
+    flex: 1 0 33.3333%;
+    max-width: 33.3333%;
+}
+
+/* ==========================================================================
+   Product
+   ========================================================================== */
+
+.product {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    background-color: #ffffff;
+}
+
+/* ==========================================================================
+   Product Image
+   ========================================================================== */
+
+.product__image-wrapper {
+    padding: 20px;
+    position: relative;
+    text-align: center;
+}
+
+.product__image {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==========================================================================
+   Product Details
+   ========================================================================== */
+
+.product__details {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    padding: 10px 20px 20px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   Product Titles
+   ========================================================================== */
+
+.product__title {
+    padding-bottom: 10px;
+
+    font-family: 'Lato-Bold', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1.37px;
+    text-transform: uppercase;
+}
+
+.product__subtitle {
+    padding-bottom: 10px;
+
+    font-size: 12px;
+    line-height: 19px;
+    letter-spacing: 0.43px;
+
+    color: #808080;
+}
+
+/* ==========================================================================
+   Product Prices
+   ========================================================================== */
+
+.product__price {
+    padding-bottom: 20px;
+
+    font-family: 'Lato-Bold', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2.33px;
+}
+
+.product__price--strike {
+    margin-right: 10px;
+    text-decoration: line-through;
+}
+
+.product__price--discounted {
+    color: #F54B5E;
+}
+
+/* ==========================================================================
+   Product actions
+   ========================================================================== */
+
+.product__wishlist-button {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.product__add-to-cart {
+    width: 100%;
+    margin-top: 10px;
+    margin-top: auto;
+}
+
+/* ==========================================================================
+   Pagination
+   ========================================================================== */
+
+.pagination {
+    height: 45px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.pagination__list {
+    height: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.pagination__item {
+    height: 100%;
+    width: 45px;
+    font-family: 'Lato-Bold', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1.39px;
+    text-align: center;
+}
+
+.pagination__link {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #444A59;
+}
+
+.pagination__link:hover {
+    text-decoration: underline;
+}
+
+.pagination__link .icon {
+    width: 8px;
+    fill: #444A59;
+}

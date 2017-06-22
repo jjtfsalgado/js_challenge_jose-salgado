@@ -1,4 +1,3 @@
-export const helloWorld = (message) => ({
-  type: 'HELLO_WORLD',
-  payload: message
+export const fetchPage1 = () => ({
+  type: 'FETCH_PAGE_1'
 })

@@ -25,6 +25,12 @@ module.exports = {
       test: /\.scss$/,
       loader: 'style!css!sass?sourceMap',
       include: path.join(__dirname, 'src')
+    },{
+       test: /\.(png|jpg|gif)$/,
+      loader: "url-loader"
+    },{
+      test: /\.json$/,
+      loader: 'json'
     }
     ]
   }

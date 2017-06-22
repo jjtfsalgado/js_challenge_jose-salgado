@@ -1,0 +1,52 @@
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.icon {
+    width: 20px;
+    height: 20px;
+    fill: #d9d9d9;
+    transition: .3s fill;
+}
+
+.button {
+    border: 1px solid #d9d9d9;
+    border-radius: 100px;
+    background-color: #ffffff;
+
+    cursor: pointer;
+    transition: .3s border, .3s color, .3s background-color;
+}
+
+.button--round {
+    display: block;
+    border-radius: 50%;
+}
+
+.button--primary {
+    padding: 13px;
+
+    font-family: 'Lato-Bold', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.39px;
+}
+
+.button--primary:hover {
+    border: 1px solid #444A59;
+    color: #ffffff;
+    background-color: #444A59;
+}
+
+.button--wishlist:hover {
+    border: 1px solid #444A59;
+}
+
+.button--wishlist:hover > .icon {
+    fill: #444A59;
+}
+
+.button--in-cart {
+    pointer-events: none;
+    background-color: #d9d9d9;
+}

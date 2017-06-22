@@ -1,0 +1,75 @@
+
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.page-title {
+    font-size: 20px;
+}
+
+/* ==========================================================================
+   Bag
+   ========================================================================== */
+
+.header-bag {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.header-bag__item {
+    height: 25px;
+
+    display: flex;
+    align-items: flex-end;
+}
+
+.header-bag__item .icon {
+    height: auto;
+    fill: #444A59;
+}
+
+.header-bag__price {
+    margin-right: 5px;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.header-bag__count {
+    margin-left: 10px;
+}
+
+.header-bag__count .icon {
+    width: 17px;
+}
+
+.header-bag__wishlist-count {
+    margin-left: 10px;
+}
+
+.bag__item-counter {
+    width: 13px;
+    height: 13px;
+    margin-left: -1px;
+
+    display: flex;
+    align-self: flex-start;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Lato-Bold', sans-serif;
+    font-size: 8px;
+    text-align: center;
+
+    border-radius: 50%;
+    color: #ffffff;
+    background-color: #358ED7;
+}
