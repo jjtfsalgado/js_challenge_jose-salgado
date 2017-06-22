@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 export default class PaginationItem extends Component {
   render() {
+    const { page } = this.props;
     return (
       <li className="pagination__item">
-          <a href="#" className="pagination__link">
-              1
-          </a>
+          <Link to={'/' + page} className="pagination__link">
+              {page}
+          </Link>
       </li>
     );
   };

@@ -6,7 +6,7 @@ import ProductItem from './product_item';
 class ProductList extends Component {
   render() {
     const { pageProducts } = this.props;
-    console.log(pageProducts);
+
     return (
       <ul className="product-list">
         {pageProducts.map((product) => {

@@ -1,9 +1,23 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import PaginationItem from './pagination_item';
 
-export default class Pagination extends Component {
+class Pagination extends Component {
   render() {
+    const {numberPages, selectedPage} = this.props;
+
+    let generatePages = () => {
+      let container = [];
+      for(let i = 1; i <= numberPages ; i++){
+        let route = i.toString();
+        container.push(<PaginationItem key={i} page={i}/>);
+      }
+      return container;
+    }
+
+    let pages = generatePages();
+
     return (
       <nav className="pagination">
           <ul className="pagination__list">
@@ -15,7 +29,9 @@ export default class Pagination extends Component {
                       </svg>
                   </a>
               </li>
-              <PaginationItem/>
+              {pages.map((page)=>{
+                return page;
+              })}
               <li className="pagination__item">
                   <a href="#" className="pagination__link">
                       <svg className="icon" width="8px" height="10px" viewBox="18 18 8 10" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -29,3 +45,10 @@ export default class Pagination extends Component {
     );
   };
 }
+
+export default connect(
+  (state) => ({
+    numberPages: state.products.numberPages,
+    selectedPage: state.products.selectedPage
+  })
+)(Pagination);
