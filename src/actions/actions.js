@@ -1,3 +1,4 @@
-export const fetchPage1 = () => ({
-  type: 'FETCH_PAGE_1'
+export const modifyPagination = (pages) => ({
+  type: 'MODIFY_PAGINATION',
+  payload: pages
 })

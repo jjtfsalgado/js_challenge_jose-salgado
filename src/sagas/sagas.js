@@ -1,19 +1,18 @@
 import { takeEvery, fork, put, call } from 'redux-saga/effects';
 import { delay } from 'redux-saga';
-import axios from 'axios';
 
-function* messageAgain() {
+function* changePage(action) {
+  console.log(action);
   try {
-    yield call(delay, 2000);
-    yield put({ type: 'HELLO_WORLD_AGAIN', payload: 'Hello World Async with redux-saga' });
-
+    const pagination = yield put({ type: 'MODIFY_PAGINATION', payload: action.payload });
+    console.log(pagination);
   } catch(error) {
-    yield put({ type: 'HELLO_WORLD_AGAIN', payload: error });
+    yield put({ type: 'MODIFY_PAGINATION', payload: error });
   }
 }
 
 function* watchHelloAsync() {
-  yield takeEvery('HELLO_WORLD', messageAgain);
+  yield takeEvery("sf", changePage);
 }
 
 export default function* rootSaga() {

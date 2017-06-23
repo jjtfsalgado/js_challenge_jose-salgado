@@ -5,7 +5,7 @@ import App from './components/app';
 
 //generate routes according the dimension of the json object and considering 6 products per page
 //if the json data grows, automatically more routes are created
-let generateRoutes = () => {
+const routes = (() => {
   let container = [];
   const pages = Math.ceil(json.products.length / 6);
   for(let i = 1; i <= pages ; i++){
@@ -13,9 +13,7 @@ let generateRoutes = () => {
     container.push(<Route key={i} path={route}/>);
   }
   return container;
-}
-
-const routes = generateRoutes();
+})();
 
 export default (
   <Route path="/" component={App}>
