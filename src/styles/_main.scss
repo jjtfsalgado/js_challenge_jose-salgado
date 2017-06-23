@@ -156,6 +156,16 @@
     color: #444A59;
 }
 
+.pagination__link-active {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: bold;
+}
+
 .pagination__link:hover {
     text-decoration: underline;
 }

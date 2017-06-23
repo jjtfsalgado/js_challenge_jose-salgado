@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
-export default class PaginationItem extends Component {
+class PaginationItem extends Component {
   render() {
-    const { page } = this.props;
+    const { page, selectedPage } = this.props;
 
     let pages = () => {
      if (page === '...') {
@@ -12,9 +13,15 @@ export default class PaginationItem extends Component {
             {page}
           </a>
        )
-     } else {
+     } else if (page == selectedPage) {
        return(
-         <Link to={'/' + page} className="pagination__link">
+         <Link to={'/' + page} className='pagination__link-active'>
+            {page}
+          </Link>
+       )
+     }else {
+       return(
+         <Link to={'/' + page} className='pagination__link'>
             {page}
           </Link>
        )
@@ -28,3 +35,9 @@ export default class PaginationItem extends Component {
     );
   };
 }
+
+export default connect(
+  (state) => ({
+    selectedPage: state.products.selectedPage,
+  })
+)(PaginationItem);

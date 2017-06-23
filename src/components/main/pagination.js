@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import PaginationItem from './pagination_item';
-import { modifyPagination, moveRight } from '../../actions/actions';
+import { modifyPagination } from '../../actions/actions';
 
 class Pagination extends Component {
   constructor(props){
@@ -28,9 +28,9 @@ class Pagination extends Component {
     } else if (selectedPage == '4' || selectedPage == '5' || selectedPage == '6'){
       for(let i = 4; i <= 8 ; i++){
         let route = i.toString();
-        if(i == 9){
+        if(i == 8){
           pages.push(<PaginationItem key={i} page={numberPages.toString()}/>);
-        } else if (i == 8){
+        } else if (i == 7){
           pages.push(<PaginationItem key={i} page={'...'} handleAllPages={this.allPages}/>)
         } else {
           pages.push(<PaginationItem key={i} page={route}/>);
@@ -51,10 +51,11 @@ class Pagination extends Component {
     return pages;
   }
   allPages(){
-    const {numberPages, modifyPagination} = this.props;
+    const {numberPages, modifyPagination, selectedPage} = this.props;
     const pages = [];
     for(let i = 1; i <= numberPages; i++){
       let route = i.toString();
+
       pages.push(<PaginationItem key={i} page={i} />);
     }
     return modifyPagination(pages);

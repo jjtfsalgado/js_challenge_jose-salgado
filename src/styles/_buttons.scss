@@ -18,6 +18,10 @@
     transition: .3s border, .3s color, .3s background-color;
 }
 
+.button:focus {
+  outline:0;
+}
+
 .button--round {
     display: block;
     border-radius: 50%;
@@ -38,6 +42,10 @@
     background-color: #444A59;
 }
 
+.button--wishlist-selected > .icon{
+  fill: #444A59;
+}
+
 .button--wishlist:hover {
     border: 1px solid #444A59;
 }
@@ -47,6 +55,17 @@
 }
 
 .button--in-cart {
-    pointer-events: none;
+    content:'In Cart';
     background-color: #d9d9d9;
+}
+
+.button--in-cart:after {
+    content:'In Cart';
+    background-color: #d9d9d9;
+    transition: .3s background-color;
+}
+
+.button--in-cart:hover:after {
+    content: "Remove Item";
+    background-color: #444A59;
 }
