@@ -1,6 +1,6 @@
 # Farfetch Javascript challenge
 #### Developed with react/redux, webpack and SASS.
-#### Includes response interface and mini-bag feature using modal component.
+#### Includes responsive interface and mini-bag feature using modal component.
 
 #### See online with Heroku: http://nameless-peak-12696.herokuapp.com
 
