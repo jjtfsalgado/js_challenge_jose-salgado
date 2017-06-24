@@ -15,6 +15,22 @@
     max-width: 33.3333%;
 }
 
+@media screen and (max-width : 850px) {
+  .product-list__item {
+      padding: 10px;
+      flex: 1 0 50%;
+      max-width: 50%;
+  }
+}
+
+@media screen and (max-width : 600px) {
+  .product-list__item {
+      padding: 10px;
+      flex: 1 0 100%;
+      max-width: 100%;
+  }
+}
+
 /* ==========================================================================
    Product
    ========================================================================== */

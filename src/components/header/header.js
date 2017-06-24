@@ -17,7 +17,7 @@ class Header extends Component {
     })()
 
     return (
-      <div className="header">
+      <header className="header container">
         <h1 className="page-title">BRAND</h1>
         <aside className="header-bag">
             <div className="header-bag__item header-bag__count">
@@ -38,7 +38,7 @@ class Header extends Component {
                 <span className="bag__item-counter">{this.props.wishProducts == undefined ? 0 : this.props.wishProducts.length }</span>
             </div>
         </aside>
-      </div>
+      </header>
     );
   };
 }

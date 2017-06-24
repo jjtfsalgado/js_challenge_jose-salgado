@@ -56,7 +56,7 @@ class ProductItem extends Component {
     const { bagProducts, id, wishProducts } = props;
     for (var i = 0; i < bagProducts.length; i++) {
       if (bagProducts[i].id == id) {
-        return this.setState({
+        this.setState({
           inBag: true
         })
       }
@@ -64,12 +64,12 @@ class ProductItem extends Component {
 
     for (var i = 0; i < wishProducts.length; i++) {
       if (wishProducts[i].id == id) {
-        console.log('its in');
-        return this.setState({
+        this.setState({
           inWish: true
         })
       }
     }
+    return;
   }
   componentWillMount(){
     return this.handleToggleButtons(this.props);

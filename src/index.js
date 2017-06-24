@@ -34,5 +34,6 @@ ReactDOM.render(
     <Router history={ history }>
       {router}
     </Router>
-  </Provider>
-  , document.querySelector('.container'));
+  </Provider>,
+  document.getElementById('app')
+);

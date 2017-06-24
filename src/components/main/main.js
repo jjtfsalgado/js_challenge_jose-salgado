@@ -6,12 +6,12 @@ import Pagination from './pagination';
 export default class Main extends Component {
   render() {
     return (
-      <div className="main">
+      <main className="main">
         <div className="container">
           <ProductList/>
           <Pagination/>
         </div>
-      </div>
+      </main>
     );
   };
 }
