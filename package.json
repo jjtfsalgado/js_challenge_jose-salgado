@@ -4,7 +4,7 @@
   "description": "Boilerplate for ReactJS project with hot code reloading",
   "scripts": {
     "run": "webpack | node server",
-    "start": "node server"
+    "start": "node server_heroku"
   },
   "repository": {
     "type": "git",
