@@ -14,12 +14,13 @@ class ProductItem extends Component {
     this.handleRemoveFromWish = this.handleRemoveFromWish.bind(this);
   }
   handleSelectedProduct(){
-    const { id, title, subtitle, price, image } = this.props;
+    const { id, title, subtitle, price, image, priceDiscounted } = this.props;
     const product = {
       id,
       title,
       subtitle,
       price,
+      priceDiscounted,
       image
     };
     return product;

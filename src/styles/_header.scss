@@ -15,12 +15,14 @@
     font-size: 20px;
 }
 .modal-ul{
-  padding-left: 5%;
   padding-top: 2.5%;
-  padding-right: 5%;
 
   .modal-item{
+    padding-left: 3%;
+    padding-right: 5%;
     position: relative;
+    border-bottom: 1px solid rgb(227,226,226);
+    cursor: default;
 
     img{
       padding: 10px;
@@ -30,34 +32,57 @@
 
     .title{
       position: absolute;
-      left: 75px;
-      top: 20px;
+      left: 95px;
+      top: 15px;
       font-size: 12px;
       font-weight: bold;
     }
 
     .subtitle{
       position: absolute;
-      left: 75px;
-      top: 36px;
+      left: 95px;
+      top: 32px;
       font-size: 9px;
     }
 
     .price{
       position: absolute;
-      left: 75px;
-      top: 50px;
-      font-size: 10px;
+      left: 95px;
+      top: 48px;
+      font-size: 13px;
       color: grey;
     }
 
     .del{
       position: absolute;
-      right: 10px;
+      right: 17px;
       top: 20px;
       font-size: 12px;
       font-weight: bold;
+      cursor: pointer;
     }
+  }
+
+  .sub-total{
+    position: relative;
+    padding: 30px 0px 20px 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color:#cacaca;
+    cursor: default;
+
+    .number{
+      position: absolute;
+      right:20px;
+      color:rgb(68, 74, 89);
+    }
+
+  }
+
+  hr{
+    width:90%;
+    border-top: 0.5px dotted rgb(227,226,226);
+    margin-bottom: 20px;
   }
 }
 /* ==========================================================================
@@ -72,12 +97,12 @@
 
 .header-bag__item {
     height: 25px;
-
     display: flex;
     align-items: flex-end;
 }
 
 .header-bag__item .icon {
+    cursor: pointer;
     height: auto;
     fill: #444A59;
 }

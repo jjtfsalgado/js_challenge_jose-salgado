@@ -1,6 +1,18 @@
 import React, { Component } from 'react';
 
 export default class Modal extends React.Component {
+    constructor(props){
+      super(props);
+
+      this.close = this.close.bind(this);
+    }
+    close(e) {
+      e.preventDefault()
+
+      if (this.props.onClose) {
+        this.props.onClose()
+      }
+    }
     render() {
       if (this.props.isOpen === false)
         return null
@@ -9,10 +21,11 @@ export default class Modal extends React.Component {
         position: 'absolute',
         width: '350px',
         height: 'auto',
-        top: '7%',
+        top: '50px',
         right: '15%',
         zIndex: '9999',
-        background: '#fff'
+        background: '#fff',
+        boxShadow: "2px 2px 5px #5b5b5b"
       }
 
       if (this.props.width && this.props.height) {
@@ -32,9 +45,11 @@ export default class Modal extends React.Component {
       let backdropStyle = {
         position: 'absolute',
         width: '100%',
-        height: '100%',
-        top: '0px',
-        left: '0px',
+        minHeight: '100%',
+        top:'0',
+        bottom:'0',
+        left:'0',
+        right:'0',
         zIndex: '9998',
         background: 'rgba(0, 0, 0, 0.3)'
       }
@@ -46,7 +61,7 @@ export default class Modal extends React.Component {
       }
 
       return (
-        <div className={this.props.containerClassName}>
+        <div className="modal-container">
           <div className={this.props.className} style={modalStyle}>
             {this.props.children}
           </div>

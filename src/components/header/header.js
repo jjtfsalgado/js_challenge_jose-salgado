@@ -27,12 +27,15 @@ class Header extends Component {
   }
   render() {
     const { bagProducts } = this.props;
-
     let totalCart = (() => {
       let total = 0;
       if (bagProducts) {
         bagProducts.map((product)=> {
-          total+= +product.price
+          if (product.priceDiscounted) {
+            total+= +product.priceDiscounted
+          }else{
+            total+= +product.price
+          }
         })
         return total;
       } else {
@@ -41,7 +44,7 @@ class Header extends Component {
     })()
 
     return (
-      <header className="header container">
+      <header className="header container" >
         <h1 className="page-title">BRAND</h1>
         <aside className="header-bag">
             <div className="header-bag__item header-bag__count" onClick={() => this.openModal()} >
@@ -65,9 +68,9 @@ class Header extends Component {
                     {bagProducts.map((product)=> {
                       return <ModalItem key={product.id} {...product}/>
                     })}
-                    <p>CART SUBTOTAL: {'£'+totalCart}</p>
+                    <p className="sub-total">CART SUBTOTAL: <span className="number">{'£'+totalCart}</span></p>
+                    <hr/>
                   </ul>
-                  <p><button onClick={() => this.closeModal()}>Close</button></p>
                 </Modal>
             </div>
         </aside>
