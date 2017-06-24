@@ -9,6 +9,6 @@ Getting started
 git clone https://github.com/jjtfsalgado/js_challenge_jose-salgado.git
 cd js_challenge_jose-salgado/
 npm i
-npm run-script run
+npm start
 open http://localhost:3000
 ```
