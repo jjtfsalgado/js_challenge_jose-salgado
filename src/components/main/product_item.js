@@ -7,14 +7,8 @@ class ProductItem extends Component {
   constructor(props){
     super(props);
 
-    this.state = {
-      inBag: false,
-      inWish: false
-    }
-
     this.handleAddToWishlist = this.handleAddToWishlist.bind(this);
     this.handleAddToBag = this.handleAddToBag.bind(this);
-    this.handleToggleButtons = this.handleToggleButtons.bind(this);
     this.handleSelectedProduct = this.handleSelectedProduct.bind(this);
     this.handleRemoveFromBag = this.handleRemoveFromBag.bind(this);
     this.handleRemoveFromWish = this.handleRemoveFromWish.bind(this);
@@ -40,45 +34,28 @@ class ProductItem extends Component {
   }
   handleRemoveFromBag(){
     const product = this.handleSelectedProduct();
-    this.setState({
-      inBag: false
-    })
     return this.props.removeFromBag(product.id);
   }
   handleRemoveFromWish(){
     const product = this.handleSelectedProduct();
-    this.setState({
-      inWish: false
-    })
     return this.props.removeFromWish(product.id);
   }
-  handleToggleButtons(props){
-    const { bagProducts, id, wishProducts } = props;
-    for (var i = 0; i < bagProducts.length; i++) {
-      if (bagProducts[i].id == id) {
-        this.setState({
-          inBag: true
-        })
+  render() {
+    const {title, subtitle, price, priceDiscounted, wishProducts, bagProducts, id } = this.props;
+    let wishSelected = false;
+    let bagSelected = false;
+
+    for (let i = 0; i < wishProducts.length; i++) {
+      if (wishProducts[i].id == id) {
+        wishSelected = true;
       }
     }
 
-    for (var i = 0; i < wishProducts.length; i++) {
-      if (wishProducts[i].id == id) {
-        this.setState({
-          inWish: true
-        })
+    for (let i = 0; i < bagProducts.length; i++) {
+      if (bagProducts[i].id == id) {
+        bagSelected = true;
       }
     }
-    return;
-  }
-  componentWillMount(){
-    return this.handleToggleButtons(this.props);
-  }
-  componentWillReceiveProps(nextProps){
-    return this.handleToggleButtons(nextProps);
-  }
-  render() {
-    const {title, subtitle, price, priceDiscounted } = this.props;
 
     let productPrice = () => {
       if (priceDiscounted) {
@@ -101,7 +78,7 @@ class ProductItem extends Component {
           <article className="product" itemScope itemType="http://schema.org/Product">
               <figure className="product__image-wrapper">
                   <img className="product__image" src={img} alt="Product" itemProp="image"/>
-                  <button className={`product__wishlist-button button button--round ${this.state.inWish == false ? 'button--wishlist' : 'button--wishlist-selected'}`} onClick={this.state.inWish == false ? this.handleAddToWishlist : this.handleRemoveFromWish}>
+                  <button className={`product__wishlist-button button button--round ${wishSelected == false ? 'button--wishlist' : 'button--wishlist-selected'}`} onClick={wishSelected == false ? this.handleAddToWishlist : this.handleRemoveFromWish}>
                     <svg className="icon" width="20px" height="20px" viewBox="0 6 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" >
                         <title>{title}</title>
                         <polygon id="Wishlist-Icon" stroke="none" fill-rule="evenodd" points="12.3598869 13.2675869 20 13.2675869 13.8200565 17.7545318 16.1782804 25.0221187 9.99833694 20.5318477 3.81839348 25.0221187 6.17994346 17.7545318 0 13.2675869 7.63678696 13.2675869 9.99833694 6"></polygon>
@@ -112,7 +89,7 @@ class ProductItem extends Component {
                 <h1 className="product__title" itemProp="brand">{title}</h1>
                 <p className="product__subtitle" itemProp="description">{subtitle}</p>
                 {productPrice()}
-                {this.state.inBag == false ? <button className="product__add-to-cart button button--primary" onClick={this.handleAddToBag}>Add to Cart</button> : <button className="product__add-to-cart button button--primary button--in-cart" onClick={this.handleRemoveFromBag}></button>}
+                {bagSelected == false ? <button className="product__add-to-cart button button--primary" onClick={this.handleAddToBag}>Add to Cart</button> : <button className="product__add-to-cart button button--primary button--in-cart" onClick={this.handleRemoveFromBag}></button>}
               </div>
           </article>
       </li>

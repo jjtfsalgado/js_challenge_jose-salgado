@@ -14,7 +14,52 @@
 .page-title {
     font-size: 20px;
 }
+.modal-ul{
+  padding-left: 5%;
+  padding-top: 2.5%;
+  padding-right: 5%;
 
+  .modal-item{
+    position: relative;
+
+    img{
+      padding: 10px;
+      width: 75px;
+      height: 75px;
+    }
+
+    .title{
+      position: absolute;
+      left: 75px;
+      top: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .subtitle{
+      position: absolute;
+      left: 75px;
+      top: 36px;
+      font-size: 9px;
+    }
+
+    .price{
+      position: absolute;
+      left: 75px;
+      top: 50px;
+      font-size: 10px;
+      color: grey;
+    }
+
+    .del{
+      position: absolute;
+      right: 10px;
+      top: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+}
 /* ==========================================================================
    Bag
    ========================================================================== */
