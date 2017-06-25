@@ -21,8 +21,9 @@ export default class Modal extends React.Component {
         position: 'absolute',
         width: '350px',
         height: 'auto',
-        top: '50px',
-        right: '15%',
+        top: '20%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
         zIndex: '9999',
         background: '#fff',
         boxShadow: "2px 2px 5px #5b5b5b"
